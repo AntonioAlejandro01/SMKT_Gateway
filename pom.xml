@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.antonioalejandro.smkt</groupId>
-	<artifactId>gateway</artifactId>
+	<artifactId>smkt-gateway</artifactId>
 	<version>0.0.1</version>
-	<name>gateway</name>
+	<name>smkt-gateway</name>
 	<description>Gateway for SmartKitchen</description>
 
 	<properties>
