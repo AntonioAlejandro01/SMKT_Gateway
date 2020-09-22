@@ -7,4 +7,4 @@ COPY ./waitForEureka.sh ./run.sh
 
 EXPOSE 8090
 
-CMD [ "./run.sh", "127.0.0.3" ,"java","-jar", "app.jar"]
+CMD [ "./run.sh", "172.0.0.3" ,"java","-jar", "app.jar"]
