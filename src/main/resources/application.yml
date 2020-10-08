@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://172.0.0.3:8761/eureka
 server:
   port: 8090
   
@@ -26,4 +26,9 @@ spring:
         - Path=/auth/**
         filters:
         - RewritePath=/auth/(?<path>.*), /$\{path}
-        
+      - id: smkt-users
+        uri: lb://smkt-users
+        predicates:
+        - Path=/users/**
+        filters:
+        - RewritePath=/users/(?<path>.*), /$\{path}
