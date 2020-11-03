@@ -20,3 +20,15 @@ spring:
         - Path=/kitchen/**
         filters:
         - RewritePath=/kitchen/(?<path>.*), /$\{path}
+      - id: smkt-oauth
+        uri: lb://smkt-oauth
+        predicates:
+        - Path=/auth/**
+        filters:
+        - RewritePath=/auth/(?<path>.*), /$\{path}
+      - id: smkt-users
+        uri: lb://smkt-users
+        predicates:
+        - Path=/users/**
+        filters:
+        - RewritePath=/users/(?<path>.*), /$\{path}
