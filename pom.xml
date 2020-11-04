@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.antonioalejandro.smkt</groupId>
 	<artifactId>smkt-gateway</artifactId>
-	<version>0.0.1</version>
+	<version>1.0.0</version>
 	<name>smkt-gateway</name>
 	<description>Gateway for SmartKitchen</description>
 
