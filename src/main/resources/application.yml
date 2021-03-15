@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://172.0.0.3:8761/eureka
+      defaultZone: http://localhost:8761/eureka
 server:
   port: 8090
   
@@ -10,25 +10,53 @@ spring:
     name: smkt-gateway
   cloud:
     gateway:
+     
      discovery:
         locator:
           enabled: true
+     
+     globalcors:
+        cors-configurations:
+          '[/**]':
+             allowedOrigins : "*"
+             allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - PATCH
+              - DELETE
+              - HEAD
      routes:
-      - id: smkt-kitchen
-        uri: lb://smkt-kitchen
+      - 
+        id: smkt-pantry
+        uri: lb://smkt-pantry
         predicates:
-        - Path=/kitchen/**
+        - Path=/pantry/**
         filters:
-        - RewritePath=/kitchen/(?<path>.*), /$\{path}
-      - id: smkt-oauth
+        - RewritePath=/pantry/(?<path>.*), /$\{path}
+        
+      - 
+        id: smkt-cookbook
+        uri: lb://smkt-cookbook
+        predicates:
+        - Path=/cookbook/**
+        filters:
+        - RewritePath=/cookbook/(?<path>.*), /$\{path}
+        
+      - 
+      
+        id: smkt-oauth
         uri: lb://smkt-oauth
         predicates:
         - Path=/auth/**
         filters:
         - RewritePath=/auth/(?<path>.*), /$\{path}
-      - id: smkt-users
+        
+      - 
+        id: smkt-users
         uri: lb://smkt-users
         predicates:
         - Path=/users/**
         filters:
         - RewritePath=/users/(?<path>.*), /$\{path}
+        
