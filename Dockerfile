@@ -6,7 +6,7 @@ COPY . .
 
 RUN mvn clean compile install
 
-RUN mv ./target/smkt-gateway-2.0.0.jar /app.jar
+RUN mv ./target/smkt-gateway.jar /app.jar
 
 FROM openjdk:11
 
