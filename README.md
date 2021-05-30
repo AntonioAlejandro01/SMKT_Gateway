@@ -10,6 +10,50 @@ Gateway for SmartKitchen App
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AntonioAlejandro01_SMKT_Gateway&metric=alert_status)](https://sonarcloud.io/dashboard?id=AntonioAlejandro01_SMKT_Gateway)
 
+## Routes
+
+<table align="center" style="margin: 10px;" width="80%">
+    <thead>
+        <tr>
+            <th>Route</th>
+            <th>Micro</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code> http://host:port//<b>smkt-u</b>/**</code>
+            </td>
+            <td>
+                <a href="https://github.com/AntonioAlejandro01/SMKT_Users">SMKT_Users</a>
+            </td>
+        </tr>
+         <tr>
+            <td>
+                <code> http://host:port//<b>smkt-p</b>/**</code>
+            </td>
+            <td>
+                <a href="https://github.com/AntonioAlejandro01/SMKT_Pantry">SMKT_Pantry</a>
+            </td>
+        </tr>
+         <tr>
+            <td>
+                <code> http://host:port//<b>smkt-c</b>/**</code>
+            </td>
+            <td>
+                <a href="https://github.com/AntonioAlejandro01/SMKT_Cookbook">SMKT_Cookbook</a>
+            </td>
+        </tr>
+         <tr>
+            <td>
+                <code> http://host:port//<b>smkt-a</b>/**</code>
+            </td>
+            <td>
+                <a href="https://github.com/AntonioAlejandro01/SMKT_Oauth">SMKT_Oauth</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ## Use With Docker
 
