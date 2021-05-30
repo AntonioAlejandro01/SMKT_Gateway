@@ -31,32 +31,32 @@ spring:
         id: smkt-pantry
         uri: lb://smkt-pantry
         predicates:
-        - Path=/pantry/**
+        - Path=/smkt-p/**
         filters:
-        - RewritePath=/pantry/(?<path>.*), /$\{path}
+        - RewritePath=/smkt-p/(?<path>.*), /$\{path}
         
       - 
         id: smkt-cookbook
         uri: lb://smkt-cookbook
         predicates:
-        - Path=/cookbook/**
+        - Path=/smkt-c/**
         filters:
-        - RewritePath=/cookbook/(?<path>.*), /$\{path}
+        - RewritePath=/smkt-c/(?<path>.*), /$\{path}
         
       - 
       
         id: smkt-oauth
         uri: lb://smkt-oauth
         predicates:
-        - Path=/auth/**
+        - Path=/smkt-a/**
         filters:
-        - RewritePath=/auth/(?<path>.*), /$\{path}
+        - RewritePath=/smkt-a/(?<path>.*), /$\{path}
         
       - 
         id: smkt-users
         uri: lb://smkt-users
         predicates:
-        - Path=/users/**
+        - Path=/smkt-u/**
         filters:
-        - RewritePath=/users/(?<path>.*), /$\{path}
+        - RewritePath=/smkt-u/(?<path>.*), /$\{path}
         
