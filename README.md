@@ -2,7 +2,11 @@
 
 Gateway for SmartKitchen App
 
-[![Build Dev](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/buildDevVersion.yml/badge.svg)](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/buildDevVersion.yml) [![Build Snapshot](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/BuildSnapshot.yml/badge.svg)](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/BuildSnapshot.yml) [![Build Release](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/BuildRelease.yml/badge.svg?branch=main)](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/BuildRelease.yml) 
+![JAVA](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white) 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[![Build Dev](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/buildDevVersion.yml/badge.svg?branch=develop)](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/buildDevVersion.yml) [![Build Snapshot](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/BuildSnapshot.yml/badge.svg)](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/BuildSnapshot.yml)  [![Build Stable Version](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/BuildRelease.yml/badge.svg)](https://github.com/AntonioAlejandro01/SMKT_Gateway/actions/workflows/BuildRelease.yml)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AntonioAlejandro01_SMKT_Gateway&metric=alert_status)](https://sonarcloud.io/dashboard?id=AntonioAlejandro01_SMKT_Gateway)
 
@@ -13,19 +17,19 @@ Use this Service with Docker as Docker container. The Repo have 3 types of image
 
 ### Types
 
-- **Stable**: this are the images that in her tag is a specific version ex.: ```antonioalejandro01/smkt-gateway:vX.X.X```. the last tag version have latest tag. 
+- **Stable**: These are the images that in her tag have a specific version ex.: ```antonioalejandro01/smkt-gateway:vX.X.X```. the last tag version have latest tag. 
 ```bash
     docker pull antonioalejandro01/smkt-gateway:v1.0.0
     # The last stable version
     docker pull antonioalejandro01/smkt-gateway:latest
  ```
 
-- **Snapshot**: this are the images that in her tag is snapshot ex.: ```antonioalejandro01/smkt-gateway:snapshot```
+- **Snapshot**: This is the image that in her tag have snapshot word ex.: ```antonioalejandro01/smkt-gateway:snapshot```
 ```bash 
     docker pull antonioalejandro01/smkt-gateway:snapshot
 ```
 
-- **Dev**: this image is only for developers and in her tag have dev ```antonioalejandro01/smkt-gateway:dev```
+- **Dev**: This image is only for developers and in her tag have dev word ```antonioalejandro01/smkt-gateway:dev```
 ```bash
     docker pull antonioalejandro01/smkt-gateway:dev
  ```
@@ -58,7 +62,7 @@ Use this Service with Docker as Docker container. The Repo have 3 types of image
 #### Docker command
 
 ```bash
-    docker run -d -p4050:4050 -ePORT=4050 -eEUREKA_URL=http://127.0.0.1:8761/eureka -t antonioalejandro01/smkt-gateway:latest
+    docker run -d -p8090:8090 -ePORT=8090 -eEUREKA_URL=http://127.0.0.1:8761/eureka -t antonioalejandro01/smkt-gateway:latest
  ```
 
 ## Use in Docker Compose
