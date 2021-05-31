@@ -1,24 +1,25 @@
-FROM maven:3-openjdk-11 as build
+FROM maven:3-openjdk-11 as Builder
 
-WORKDIR /opt/build
+WORKDIR /build
 
-COPY . .
+COPY pom.xml .
 
-RUN mvn clean compile install
+RUN mvn clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r target/
+
+COPY src ./src
+
+RUN mvn clean package  -Dmaven.test.skip
 
 RUN mv ./target/smkt-gateway.jar /app.jar
 
-FROM openjdk:11
+FROM openjdk:11-jre-slim
 
 WORKDIR /opt/server
 
-COPY --from=build /app.jar ./app.jar
+COPY --from=Builder /app.jar ./app.jar
 
-ARG port=8090
-ARG eureka_url=http://smkt-eureka:8761/eureka
-
-ENV PORT ${port}
-ENV EUREKA_URL ${eureka_url}
+ENV PORT=8090
+ENV EUREKA_URL=http://smkt-eureka:8761/eureka
 
 EXPOSE ${PORT}
 
