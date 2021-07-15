@@ -27,36 +27,32 @@ spring:
               - DELETE
               - HEAD
      routes:
-      - 
-        id: smkt-pantry
+     
+      - id: smkt-pantry
         uri: lb://smkt-pantry
         predicates:
-        - Path=/smkt-p/**
+          - Path=/smkt-p/**
         filters:
-        - RewritePath=/smkt-p/(?<path>.*), /$\{path}
+          - RewritePath=/smkt-p/(?<path>.*), /$\{path}
         
-      - 
-        id: smkt-cookbook
+      - id: smkt-cookbook
         uri: lb://smkt-cookbook
         predicates:
-        - Path=/smkt-c/**
+          - Path=/smkt-c/**
         filters:
-        - RewritePath=/smkt-c/(?<path>.*), /$\{path}
+          - RewritePath=/smkt-c/(?<path>.*), /$\{path}
         
-      - 
-      
-        id: smkt-oauth
+      - id: smkt-oauth
         uri: lb://smkt-oauth
         predicates:
-        - Path=/smkt-a/**
+          - Path=/smkt-a/**
         filters:
-        - RewritePath=/smkt-a/(?<path>.*), /$\{path}
+          - RewritePath=/smkt-a/(?<path>.*), /$\{path}
         
-      - 
-        id: smkt-users
+      - id: smkt-users
         uri: lb://smkt-users
         predicates:
-        - Path=/smkt-u/**
+          - Path=/smkt-u/**
         filters:
-        - RewritePath=/smkt-u/(?<path>.*), /$\{path}
+          - RewritePath=/smkt-u/(?<path>.*), /$\{path}
         
