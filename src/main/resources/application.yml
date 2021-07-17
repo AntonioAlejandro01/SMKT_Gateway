@@ -10,7 +10,6 @@ spring:
     name: smkt-gateway
   cloud:
     gateway:
-     
      discovery:
         locator:
           enabled: true
@@ -55,4 +54,10 @@ spring:
           - Path=/smkt-u/**
         filters:
           - RewritePath=/smkt-u/(?<path>.*), /$\{path}
-        
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
+    reactor.netty: DEBUG
